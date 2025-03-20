@@ -1,19 +1,24 @@
 public class App {
-    public static void main(String[] args) {
+    /**
+     * The main entry point of the application.
+     * It instantiates the PerimeterAssignmentRunner and executes its test methods.
+     * @param args Command line arguments (not used).
+     */
+    public static void main(String[]args) {
         PerimeterAssignmentRunner pr = new PerimeterAssignmentRunner();
 
         System.out.println("\n==============================");
         System.out.println("🔹 Running testPerimeter() for ONE file...");
-        pr.testPerimeter();  // ✅ This gives all stats for a single file
+        pr.testPerimeter();
 
         System.out.println("\n==============================");
         System.out.println("🔹 Running testPerimeterMultipleFiles()...");
-        pr.testPerimeterMultipleFiles();  // ✅ This finds the largest perimeter among multiple files
+        pr.testPerimeterMultipleFiles();
 
         System.out.println("\n==============================");
         System.out.println("🔹 Running testFileWithLargestPerimeter()...");
-        pr.testFileWithLargestPerimeter();  // ✅ This finds and prints the file with the largest perimeter
+        pr.testFileWithLargestPerimeter();
 
-        System.out.println("\n✅ All tests completed.");
+        System.out.println("\n All tests completed.");
     }
 }
