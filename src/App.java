@@ -1,5 +1,8 @@
+// import edu.duke.*;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Perimeter Assignment Project Initialized!");
+        PerimeterAssignmentRunner pr = new PerimeterAssignmentRunner();
+        pr.testPerimeter(); // Calls the test method
     }
 }
