@@ -13,12 +13,11 @@ public class PerimeterAssignmentRunner {
         return totalPerim;
     }
 
-    // Updated getNumPoints() using an explicit iterator to avoid an unused loop variable.
     public int getNumPoints(Shape s) {
         int count = 0;
         Iterator<Point> it = s.getPoints().iterator();
-        while(it.hasNext()){
-            it.next();  // Retrieve the point (we don't need to store it)
+        while (it.hasNext()) {
+            it.next();  // Move to next point
             count++;
         }
         return count;
@@ -53,6 +52,7 @@ public class PerimeterAssignmentRunner {
         return largestX;
     }
 
+    // ✅ Step 1: Implement getLargestPerimeterMultipleFiles()
     public double getLargestPerimeterMultipleFiles() {
         DirectoryResource dr = new DirectoryResource();
         double largestPerimeter = 0.0;
@@ -68,6 +68,13 @@ public class PerimeterAssignmentRunner {
         return largestPerimeter;
     }
 
+    // ✅ Step 2: Implement testPerimeterMultipleFiles()
+    public void testPerimeterMultipleFiles() {
+        double largestPerimeter = getLargestPerimeterMultipleFiles();
+        System.out.println("Largest perimeter among selected files = " + largestPerimeter);
+    }
+
+    // ✅ Step 3: Implement getFileWithLargestPerimeter()
     public String getFileWithLargestPerimeter() {
         DirectoryResource dr = new DirectoryResource();
         File temp = null;
@@ -84,6 +91,12 @@ public class PerimeterAssignmentRunner {
             }
         }
         return (temp != null) ? temp.getName() : "No file selected";
+    }
+
+    // ✅ Step 4: Implement testFileWithLargestPerimeter()
+    public void testFileWithLargestPerimeter() {
+        String largestFile = getFileWithLargestPerimeter();
+        System.out.println("File with the largest perimeter = " + largestFile);
     }
 
     public void testPerimeter() {
@@ -104,16 +117,6 @@ public class PerimeterAssignmentRunner {
 
         double largestX = getLargestX(s);
         System.out.println("Largest X coordinate = " + largestX);
-    }
-
-    public void testPerimeterMultipleFiles() {
-        double largestPerim = getLargestPerimeterMultipleFiles();
-        System.out.println("Largest perimeter in multiple files = " + largestPerim);
-    }
-
-    public void testFileWithLargestPerimeter() {
-        String largestFile = getFileWithLargestPerimeter();
-        System.out.println("File with largest perimeter = " + largestFile);
     }
 
     public void triangle() {
